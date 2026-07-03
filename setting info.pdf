@@ -1,0 +1,216 @@
+1.Account Settings (Purpose: Manage the merchant's personal account, authentication, preferences, security, and account access.)
+	1.Profile Information (Store the merchant's personal information.)
+	2.Authentication
+		Change Password
+		Confirm Password
+		Password History
+		Password Expiration
+		Two-Factor Authentication
+		Recovery Email
+		Backup Codes
+		Security Questions
+	3.Login Management
+		Active Sessions
+		Trusted Devices
+		Login History
+		Recent Activity
+		Logout From All Devices
+		Device Management
+	4.Preferences
+		Dark Mode
+		Light Mode
+		Accent Color
+		Dashboard Layout
+		Default Landing Page
+		Date Format
+		Time Format
+		Number Format
+		Currency Format
+2.Organization Settings (Business identity.)
+	1.Basic Information
+		Business Name
+		Legal Business Name
+		Business Type
+		Industry
+		Sub Industry
+		Business Category
+		Company Size
+		Business Description
+		Business Logo (move to Brand Settings)
+		Business Banner (move to Brand Settings)
+		Business Slogan
+		Business Registration Number
+		GST Number
+		VAT Number
+		PAN Number
+		Tax Identification Number
+	2.Contact Information
+		Support Email
+		Phone Number
+		WhatsApp Number
+		Fax Number
+		Website
+		LinkedIn
+		Facebook
+		Instagram
+		Twitter
+		YouTube
+	3.Address
+		Country
+		State
+		City
+		Street
+		Building
+		Zip Code
+		Latitude
+		Longitude
+3.Store Settings
+	1.Store configuration
+		Store Name
+		Store URL
+		Store Handle
+		Store Description
+		Store Logo
+		Store Icon
+		Store Status
+		Store Visibility
+		Store Launch Date
+		Store Currency
+		Store Language
+		Timezone
+		Measurement Units
+
+4.Brand Settings
+	Primary Color
+	Secondary Color
+	Accent Color
+	Heading Font
+	Body Font
+	Button Font
+	Logo
+	Dark Logo
+	Light Logo
+	Email Logo
+	Favicon
+	Brand Voice
+	Brand Guidelines
+5.Billing
+	Current Plan
+	Subscription
+	Renewal Date
+	Invoices
+	Billing Address
+	Payment Method
+	Credit Card
+	Bank Account
+	Usage
+	Storage Usage
+	Bandwidth Usage
+	API Usage
+6.Team Management
+	1.Employees
+		Owner
+		Admin
+		Manager
+		Developer
+		Designer
+		Marketing
+		Sales
+		Support
+		Accountant
+		Custom Role
+	2.Permissions
+		Products
+		Orders
+		Customers
+		Website
+		Theme
+		Analytics
+		Reports
+		Finance
+		Discounts
+		Inventory
+		Shipping
+		Marketing
+		Settings
+		API
+		Billing
+		Users
+7.Notifications
+	1.Email
+		Orders
+		Refunds
+		Returns
+		Payments
+		Subscription
+		Invoices
+		Security
+		Marketing
+		Announcements
+	2.SMS
+		OTP
+		Orders
+		Shipping
+		Delivery
+8.Localization
+	Default Language
+	Supported Languages
+	Default Currency
+	Supported Currencies
+	Country
+	Region
+	Timezone
+	Tax Region
+	Measurement System
+9.API & Developers
+	API Keys
+	Access Tokens
+	OAuth Apps
+	Private Apps
+	Public Apps
+	Rate Limits
+	Webhooks
+	SDK Settings
+	GraphQL
+	REST API
+10.System Logs
+	User Activity
+	API Logs
+	Error Logs
+	Login Logs
+	Audit Logs
+	Webhook Logs
+	Payment Logs
+
+11.Legal & Compliance
+	Privacy Policy
+	Terms & Conditions
+	Refund Policy
+	Shipping Policy
+	Cookie Policy
+	GDPR
+	CCPA
+	Consent Management
+	Age Verification
+
+12.Backup
+	Automatic Backup
+	Manual Backup
+	Restore
+	Export
+	Import
+	Version History
+
+13.Website Settings
+	Theme
+	Template
+	Header
+	Footer
+	Pages
+	Navigation
+	Menus
+	Announcement Bar
+
+
+i desided to add this fetcher  
+
