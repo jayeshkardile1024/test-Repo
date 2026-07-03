@@ -1,0 +1,1092 @@
+Entity
+
+package com.primezat.demo.model;
+
+import jakarta.persistence.Entity;
+import jakarta.persistence.GeneratedValue;
+import jakarta.persistence.GenerationType;
+import jakarta.persistence.Id;
+import jakarta.persistence.Column;
+import jakarta.persistence.Table;
+
+@Entity
+@Table(name = "medical_shop_product")
+public class MedicalShopProduct {
+
+    @Id
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
+    private Long id;
+
+    private Long projectId;
+    private String name;
+    private String brand;
+    private String genericName;
+
+    @Column(length = 2000)
+    private String description;
+
+    @Column(length = 1000)
+    private String uses;
+
+    @Column(length = 1000)
+    private String dosage;
+
+    @Column(length = 1000)
+    private String ingredients;
+
+    @Column(length = 1000)
+    private String sideEffects;
+
+    @Column(length = 1000)
+    private String warnings;
+
+    @Column(length = 1000)
+    private String storageInstructions;
+
+    private String expiryInformation;
+    private Double price;
+    private Integer discount;
+    private String stockStatus;
+    private Integer stockCount;
+    private Double rating;
+
+    @Column(columnDefinition = "TEXT")
+    private String imageUrl;
+
+    private Boolean prescriptionRequired = false;
+    private String category;
+
+    public MedicalShopProduct() {
+    }
+
+    public MedicalShopProduct(Long projectId, String name, String brand, String genericName, String description, String uses, String dosage, String ingredients, String sideEffects, String warnings, String storageInstructions, String expiryInformation, Double price, Integer discount, String stockStatus, Integer stockCount, Double rating, String imageUrl, Boolean prescriptionRequired, String category) {
+        this.projectId = projectId;
+        this.name = name;
+        this.brand = brand;
+        this.genericName = genericName;
+        this.description = description;
+        this.uses = uses;
+        this.dosage = dosage;
+        this.ingredients = ingredients;
+        this.sideEffects = sideEffects;
+        this.warnings = warnings;
+        this.storageInstructions = storageInstructions;
+        this.expiryInformation = expiryInformation;
+        this.price = price;
+        this.discount = discount;
+        this.stockStatus = stockStatus;
+        this.stockCount = stockCount;
+        this.rating = rating;
+        this.imageUrl = imageUrl;
+        this.prescriptionRequired = prescriptionRequired;
+        this.category = category;
+    }
+
+    public Long getId() {
+        return id;
+    }
+
+    public void setId(Long id) {
+        this.id = id;
+    }
+
+    public Long getProjectId() {
+        return projectId;
+    }
+
+    public void setProjectId(Long projectId) {
+        this.projectId = projectId;
+    }
+
+    public String getName() {
+        return name;
+    }
+
+    public void setName(String name) {
+        this.name = name;
+    }
+
+    public String getBrand() {
+        return brand;
+    }
+
+    public void setBrand(String brand) {
+        this.brand = brand;
+    }
+
+    public String getGenericName() {
+        return genericName;
+    }
+
+    public void setGenericName(String genericName) {
+        this.genericName = genericName;
+    }
+
+    public String getDescription() {
+        return description;
+    }
+
+    public void setDescription(String description) {
+        this.description = description;
+    }
+
+    public String getUses() {
+        return uses;
+    }
+
+    public void setUses(String uses) {
+        this.uses = uses;
+    }
+
+    public String getDosage() {
+        return dosage;
+    }
+
+    public void setDosage(String dosage) {
+        this.dosage = dosage;
+    }
+
+    public String getIngredients() {
+        return ingredients;
+    }
+
+    public void setIngredients(String ingredients) {
+        this.ingredients = ingredients;
+    }
+
+    public String getSideEffects() {
+        return sideEffects;
+    }
+
+    public void setSideEffects(String sideEffects) {
+        this.sideEffects = sideEffects;
+    }
+
+    public String getWarnings() {
+        return warnings;
+    }
+
+    public void setWarnings(String warnings) {
+        this.warnings = warnings;
+    }
+
+    public String getStorageInstructions() {
+        return storageInstructions;
+    }
+
+    public void setStorageInstructions(String storageInstructions) {
+        this.storageInstructions = storageInstructions;
+    }
+
+    public String getExpiryInformation() {
+        return expiryInformation;
+    }
+
+    public void setExpiryInformation(String expiryInformation) {
+        this.expiryInformation = expiryInformation;
+    }
+
+    public Double getPrice() {
+        return price;
+    }
+
+    public void setPrice(Double price) {
+        this.price = price;
+    }
+
+    public Integer getDiscount() {
+        return discount;
+    }
+
+    public void setDiscount(Integer discount) {
+        this.discount = discount;
+    }
+
+    public String getStockStatus() {
+        return stockStatus;
+    }
+
+    public void setStockStatus(String stockStatus) {
+        this.stockStatus = stockStatus;
+    }
+
+    public Integer getStockCount() {
+        return stockCount;
+    }
+
+    public void setStockCount(Integer stockCount) {
+        this.stockCount = stockCount;
+    }
+
+    public Double getRating() {
+        return rating;
+    }
+
+    public void setRating(Double rating) {
+        this.rating = rating;
+    }
+
+    public String getImageUrl() {
+        return imageUrl;
+    }
+
+    public void setImageUrl(String imageUrl) {
+        this.imageUrl = imageUrl;
+    }
+
+    public Boolean getPrescriptionRequired() {
+        return prescriptionRequired;
+    }
+
+    public void setPrescriptionRequired(Boolean prescriptionRequired) {
+        this.prescriptionRequired = prescriptionRequired;
+    }
+
+    public String getCategory() {
+        return category;
+    }
+
+    public void setCategory(String category) {
+        this.category = category;
+    }
+}
+
+
+package com.primezat.demo.model;
+
+import jakarta.persistence.*;
+import java.time.LocalDateTime;
+
+@Entity
+@Table(name = "medical_shop_order")
+public class MedicalShopOrder {
+
+    @Id
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
+    private Long id;
+
+    private Long projectId;
+    private String customerName;
+    private String customerEmail;
+    private String customerPhone;
+
+    @Column(length = 1000)
+    private String shippingAddress;
+
+    private String deliverySlot;
+    private String paymentMethod;
+
+    @Column(columnDefinition = "TEXT")
+    private String prescriptionUrl;
+
+    @Column(length = 1000)
+    private String doctorNotes;
+
+    private Boolean pharmacistVerified = false;
+    private String status = "Order Placed";
+
+    @Column(columnDefinition = "TEXT")
+    private String itemsJson;
+
+    private Double subtotal;
+    private Double deliveryCharges;
+    private Double total;
+
+    private LocalDateTime createdAt;
+
+    @PrePersist
+    protected void onCreate() {
+        this.createdAt = LocalDateTime.now();
+    }
+
+    public MedicalShopOrder() {
+    }
+
+    public MedicalShopOrder(Long projectId, String customerName, String customerEmail, String customerPhone, String shippingAddress, String deliverySlot, String paymentMethod, String prescriptionUrl, String doctorNotes, Boolean pharmacistVerified, String status, String itemsJson, Double subtotal, Double deliveryCharges, Double total) {
+        this.projectId = projectId;
+        this.customerName = customerName;
+        this.customerEmail = customerEmail;
+        this.customerPhone = customerPhone;
+        this.shippingAddress = shippingAddress;
+        this.deliverySlot = deliverySlot;
+        this.paymentMethod = paymentMethod;
+        this.prescriptionUrl = prescriptionUrl;
+        this.doctorNotes = doctorNotes;
+        this.pharmacistVerified = pharmacistVerified;
+        this.status = status;
+        this.itemsJson = itemsJson;
+        this.subtotal = subtotal;
+        this.deliveryCharges = deliveryCharges;
+        this.total = total;
+    }
+
+    public Long getId() {
+        return id;
+    }
+
+    public void setId(Long id) {
+        this.id = id;
+    }
+
+    public Long getProjectId() {
+        return projectId;
+    }
+
+    public void setProjectId(Long projectId) {
+        this.projectId = projectId;
+    }
+
+    public String getCustomerName() {
+        return customerName;
+    }
+
+    public void setCustomerName(String customerName) {
+        this.customerName = customerName;
+    }
+
+    public String getCustomerEmail() {
+        return customerEmail;
+    }
+
+    public void setCustomerEmail(String customerEmail) {
+        this.customerEmail = customerEmail;
+    }
+
+    public String getCustomerPhone() {
+        return customerPhone;
+    }
+
+    public void setCustomerPhone(String customerPhone) {
+        this.customerPhone = customerPhone;
+    }
+
+    public String getShippingAddress() {
+        return shippingAddress;
+    }
+
+    public void setShippingAddress(String shippingAddress) {
+        this.shippingAddress = shippingAddress;
+    }
+
+    public String getDeliverySlot() {
+        return deliverySlot;
+    }
+
+    public void setDeliverySlot(String deliverySlot) {
+        this.deliverySlot = deliverySlot;
+    }
+
+    public String getPaymentMethod() {
+        return paymentMethod;
+    }
+
+    public void setPaymentMethod(String paymentMethod) {
+        this.paymentMethod = paymentMethod;
+    }
+
+    public String getPrescriptionUrl() {
+        return prescriptionUrl;
+    }
+
+    public void setPrescriptionUrl(String prescriptionUrl) {
+        this.prescriptionUrl = prescriptionUrl;
+    }
+
+    public String getDoctorNotes() {
+        return doctorNotes;
+    }
+
+    public void setDoctorNotes(String doctorNotes) {
+        this.doctorNotes = doctorNotes;
+    }
+
+    public Boolean getPharmacistVerified() {
+        return pharmacistVerified;
+    }
+
+    public void setPharmacistVerified(Boolean pharmacistVerified) {
+        this.pharmacistVerified = pharmacistVerified;
+    }
+
+    public String getStatus() {
+        return status;
+    }
+
+    public void setStatus(String status) {
+        this.status = status;
+    }
+
+    public String getItemsJson() {
+        return itemsJson;
+    }
+
+    public void setItemsJson(String itemsJson) {
+        this.itemsJson = itemsJson;
+    }
+
+    public Double getSubtotal() {
+        return subtotal;
+    }
+
+    public void setSubtotal(Double subtotal) {
+        this.subtotal = subtotal;
+    }
+
+    public Double getDeliveryCharges() {
+        return deliveryCharges;
+    }
+
+    public void setDeliveryCharges(Double deliveryCharges) {
+        this.deliveryCharges = deliveryCharges;
+    }
+
+    public Double getTotal() {
+        return total;
+    }
+
+    public void setTotal(Double total) {
+        this.total = total;
+    }
+
+    public LocalDateTime getCreatedAt() {
+        return createdAt;
+    }
+
+    public void setCreatedAt(LocalDateTime createdAt) {
+        this.createdAt = createdAt;
+    }
+}
+
+
+package com.primezat.demo.model;
+
+import jakarta.persistence.Entity;
+import jakarta.persistence.GeneratedValue;
+import jakarta.persistence.GenerationType;
+import jakarta.persistence.Id;
+import jakarta.persistence.Column;
+import jakarta.persistence.Table;
+
+@Entity
+@Table(name = "medical_shop_info")
+public class MedicalShopInfo {
+
+    @Id
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
+    private Long id;
+
+    private Long projectId;
+    private String subcategory;
+    private String companyName;
+    private String businessName;
+
+    @Column(length = 2000)
+    private String companyDescription;
+
+    private String ownerName;
+    private String mobileNo;
+    private String email;
+    private String city;
+    private String state;
+    private String country;
+    private String pincode;
+
+    @Column(columnDefinition = "TEXT")
+    private String logoUrl;
+
+    private String themeColor;
+    private String selectedTheme;
+    private String selectedHomepageLayout;
+    private String selectedLoginLayout;
+    private String selectedDashboardLayout;
+
+    public MedicalShopInfo() {
+    }
+
+    public MedicalShopInfo(Long projectId, String subcategory, String companyName, String businessName, String companyDescription, String ownerName, String mobileNo, String email, String city, String state, String country, String pincode, String logoUrl, String themeColor, String selectedTheme, String selectedHomepageLayout, String selectedLoginLayout, String selectedDashboardLayout) {
+        this.projectId = projectId;
+        this.subcategory = subcategory;
+        this.companyName = companyName;
+        this.businessName = businessName;
+        this.companyDescription = companyDescription;
+        this.ownerName = ownerName;
+        this.mobileNo = mobileNo;
+        this.email = email;
+        this.city = city;
+        this.state = state;
+        this.country = country;
+        this.pincode = pincode;
+        this.logoUrl = logoUrl;
+        this.themeColor = themeColor;
+        this.selectedTheme = selectedTheme;
+        this.selectedHomepageLayout = selectedHomepageLayout;
+        this.selectedLoginLayout = selectedLoginLayout;
+        this.selectedDashboardLayout = selectedDashboardLayout;
+    }
+
+    public Long getId() {
+        return id;
+    }
+
+    public void setId(Long id) {
+        this.id = id;
+    }
+
+    public Long getProjectId() {
+        return projectId;
+    }
+
+    public void setProjectId(Long projectId) {
+        this.projectId = projectId;
+    }
+
+    public String getSubcategory() {
+        return subcategory;
+    }
+
+    public void setSubcategory(String subcategory) {
+        this.subcategory = subcategory;
+    }
+
+    public String getCompanyName() {
+        return companyName;
+    }
+
+    public void setCompanyName(String companyName) {
+        this.companyName = companyName;
+    }
+
+    public String getBusinessName() {
+        return businessName;
+    }
+
+    public void setBusinessName(String businessName) {
+        this.businessName = businessName;
+    }
+
+    public String getCompanyDescription() {
+        return companyDescription;
+    }
+
+    public void setCompanyDescription(String companyDescription) {
+        this.companyDescription = companyDescription;
+    }
+
+    public String getOwnerName() {
+        return ownerName;
+    }
+
+    public void setOwnerName(String ownerName) {
+        this.ownerName = ownerName;
+    }
+
+    public String getMobileNo() {
+        return mobileNo;
+    }
+
+    public void setMobileNo(String mobileNo) {
+        this.mobileNo = mobileNo;
+    }
+
+    public String getEmail() {
+        return email;
+    }
+
+    public void setEmail(String email) {
+        this.email = email;
+    }
+
+    public String getCity() {
+        return city;
+    }
+
+    public void setCity(String city) {
+        this.city = city;
+    }
+
+    public String getState() {
+        return state;
+    }
+
+    public void setState(String state) {
+        this.state = state;
+    }
+
+    public String getCountry() {
+        return country;
+    }
+
+    public void setCountry(String country) {
+        this.country = country;
+    }
+
+    public String getPincode() {
+        return pincode;
+    }
+
+    public void setPincode(String pincode) {
+        this.pincode = pincode;
+    }
+
+    public String getLogoUrl() {
+        return logoUrl;
+    }
+
+    public void setLogoUrl(String logoUrl) {
+        this.logoUrl = logoUrl;
+    }
+
+    public String getThemeColor() {
+        return themeColor;
+    }
+
+    public void setThemeColor(String themeColor) {
+        this.themeColor = themeColor;
+    }
+
+    public String getSelectedTheme() {
+        return selectedTheme;
+    }
+
+    public void setSelectedTheme(String selectedTheme) {
+        this.selectedTheme = selectedTheme;
+    }
+
+    public String getSelectedHomepageLayout() {
+        return selectedHomepageLayout;
+    }
+
+    public void setSelectedHomepageLayout(String selectedHomepageLayout) {
+        this.selectedHomepageLayout = selectedHomepageLayout;
+    }
+
+    public String getSelectedLoginLayout() {
+        return selectedLoginLayout;
+    }
+
+    public void setSelectedLoginLayout(String selectedLoginLayout) {
+        this.selectedLoginLayout = selectedLoginLayout;
+    }
+
+    public String getSelectedDashboardLayout() {
+        return selectedDashboardLayout;
+    }
+
+    public void setSelectedDashboardLayout(String selectedDashboardLayout) {
+        this.selectedDashboardLayout = selectedDashboardLayout;
+    }
+}
+
+
+repo
+package com.primezat.demo.repository;
+
+import com.primezat.demo.model.MedicalShopProduct;
+import org.springframework.data.jpa.repository.JpaRepository;
+import org.springframework.stereotype.Repository;
+
+import java.util.List;
+
+@Repository
+public interface MedicalShopProductRepository extends JpaRepository<MedicalShopProduct, Long> {
+    List<MedicalShopProduct> findByProjectId(Long projectId);
+}
+
+
+package com.primezat.demo.repository;
+
+import com.primezat.demo.model.MedicalShopOrder;
+import org.springframework.data.jpa.repository.JpaRepository;
+import org.springframework.stereotype.Repository;
+
+import java.util.List;
+
+@Repository
+public interface MedicalShopOrderRepository extends JpaRepository<MedicalShopOrder, Long> {
+    List<MedicalShopOrder> findByProjectId(Long projectId);
+    List<MedicalShopOrder> findByProjectIdAndCustomerEmail(Long projectId, String customerEmail);
+}
+
+package com.primezat.demo.repository;
+
+import com.primezat.demo.model.MedicalShopInfo;
+import org.springframework.data.jpa.repository.JpaRepository;
+import org.springframework.stereotype.Repository;
+
+import java.util.Optional;
+
+@Repository
+public interface MedicalShopInfoRepository extends JpaRepository<MedicalShopInfo, Long> {
+    Optional<MedicalShopInfo> findByProjectId(Long projectId);
+}
+
+
+controller
+package com.primezat.demo.controller;
+
+import com.primezat.demo.model.MedicalShopOrder;
+import com.primezat.demo.repository.MedicalShopOrderRepository;
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.http.ResponseEntity;
+import org.springframework.web.bind.annotation.*;
+
+import java.util.List;
+import java.util.Optional;
+
+@RestController
+@RequestMapping("/api/medical-shop/orders")
+@CrossOrigin(origins = "*")
+public class MedicalShopOrderApiController {
+
+    @Autowired
+    private MedicalShopOrderRepository repository;
+
+    @GetMapping
+    public ResponseEntity<List<MedicalShopOrder>> getOrders(@RequestParam Long projectId) {
+        return ResponseEntity.ok(repository.findByProjectId(projectId));
+    }
+
+    @GetMapping("/customer")
+    public ResponseEntity<List<MedicalShopOrder>> getCustomerOrders(@RequestParam Long projectId, @RequestParam String email) {
+        return ResponseEntity.ok(repository.findByProjectIdAndCustomerEmail(projectId, email));
+    }
+
+    @PostMapping
+    public ResponseEntity<MedicalShopOrder> placeOrder(@RequestBody MedicalShopOrder order) {
+        // If a prescription is required, keep it "Pending Prescription Verification"
+        // Else, let it start as "Order Placed"
+        if (order.getPrescriptionUrl() != null && !order.getPrescriptionUrl().trim().isEmpty()) {
+            order.setStatus("Order Placed"); // Start tracking path
+        } else {
+            order.setStatus("Order Placed");
+        }
+        return ResponseEntity.ok(repository.save(order));
+    }
+
+    @PutMapping("/{id}/status")
+    public ResponseEntity<MedicalShopOrder> updateOrderStatus(@PathVariable Long id, @RequestBody MedicalShopOrder statusPayload) {
+        Optional<MedicalShopOrder> opt = repository.findById(id);
+        if (opt.isPresent()) {
+            MedicalShopOrder order = opt.get();
+            order.setStatus(statusPayload.getStatus());
+            
+            // Auto approve pharmacist verification if status is advanced past prescription verification
+            if ("Prescription Verified".equalsIgnoreCase(statusPayload.getStatus()) ||
+                "Packed".equalsIgnoreCase(statusPayload.getStatus()) ||
+                "Shipped".equalsIgnoreCase(statusPayload.getStatus())) {
+                order.setPharmacistVerified(true);
+            }
+            return ResponseEntity.ok(repository.save(order));
+        }
+        return ResponseEntity.notFound().build();
+    }
+
+    @PutMapping("/{id}/verify")
+    public ResponseEntity<MedicalShopOrder> verifyPrescription(@PathVariable Long id, @RequestParam boolean verified) {
+        Optional<MedicalShopOrder> opt = repository.findById(id);
+        if (opt.isPresent()) {
+            MedicalShopOrder order = opt.get();
+            order.setPharmacistVerified(verified);
+            if (verified) {
+                order.setStatus("Prescription Verified");
+            } else {
+                order.setStatus("Prescription Rejected");
+            }
+            return ResponseEntity.ok(repository.save(order));
+        }
+        return ResponseEntity.notFound().build();
+    }
+}
+
+
+
+package com.primezat.demo.controller;
+
+import com.primezat.demo.model.MedicalShopProduct;
+import com.primezat.demo.repository.MedicalShopProductRepository;
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.http.ResponseEntity;
+import org.springframework.web.bind.annotation.*;
+
+import java.util.ArrayList;
+import java.util.List;
+import java.util.Optional;
+
+@RestController
+@RequestMapping("/api/medical-shop/products")
+@CrossOrigin(origins = "*")
+public class MedicalShopProductApiController {
+
+    @Autowired
+    private MedicalShopProductRepository repository;
+
+    @GetMapping
+    public ResponseEntity<List<MedicalShopProduct>> getProducts(@RequestParam Long projectId) {
+        List<MedicalShopProduct> products = repository.findByProjectId(projectId);
+        if (products.isEmpty()) {
+            // Seed default medical products for a premium demo experience
+            products = seedDefaultProducts(projectId);
+        }
+        return ResponseEntity.ok(products);
+    }
+
+    @PostMapping
+    public ResponseEntity<MedicalShopProduct> createProduct(@RequestBody MedicalShopProduct product) {
+        return ResponseEntity.ok(repository.save(product));
+    }
+
+    @PutMapping("/{id}")
+    public ResponseEntity<MedicalShopProduct> updateProduct(@PathVariable Long id, @RequestBody MedicalShopProduct product) {
+        Optional<MedicalShopProduct> opt = repository.findById(id);
+        if (opt.isPresent()) {
+            MedicalShopProduct existing = opt.get();
+            existing.setName(product.getName());
+            existing.setBrand(product.getBrand());
+            existing.setGenericName(product.getGenericName());
+            existing.setCategory(product.getCategory());
+            existing.setDescription(product.getDescription());
+            existing.setUses(product.getUses());
+            existing.setDosage(product.getDosage());
+            existing.setIngredients(product.getIngredients());
+            existing.setSideEffects(product.getSideEffects());
+            existing.setWarnings(product.getWarnings());
+            existing.setStorageInstructions(product.getStorageInstructions());
+            existing.setExpiryInformation(product.getExpiryInformation());
+            existing.setPrice(product.getPrice());
+            existing.setDiscount(product.getDiscount());
+            existing.setStockStatus(product.getStockStatus());
+            existing.setStockCount(product.getStockCount());
+            existing.setRating(product.getRating());
+            existing.setImageUrl(product.getImageUrl());
+            existing.setPrescriptionRequired(product.getPrescriptionRequired());
+            return ResponseEntity.ok(repository.save(existing));
+        }
+        return ResponseEntity.notFound().build();
+    }
+
+    @DeleteMapping("/{id}")
+    public ResponseEntity<Void> deleteProduct(@PathVariable Long id) {
+        if (repository.existsById(id)) {
+            repository.deleteById(id);
+            return ResponseEntity.ok().build();
+        }
+        return ResponseEntity.notFound().build();
+    }
+
+    private List<MedicalShopProduct> seedDefaultProducts(Long projectId) {
+        List<MedicalShopProduct> list = new ArrayList<>();
+        
+        // 1. Medicines - Pain/Fever
+        list.add(new MedicalShopProduct(projectId, "Paracetamol 650mg", "Calpol", "Paracetamol", 
+            "Effective pain reliever and fever reducer used to treat headaches, muscle aches, arthritis, backache, toothaches, and colds.",
+            "Fever, mild to moderate body pain, headache, dental pain.",
+            "Take 1 tablet every 4-6 hours as needed. Maximum 4g (6 tablets) per 24 hours.",
+            "Paracetamol 650mg, Excipients q.s.",
+            "Nausea, allergic skin rashes, liver toxicity (only in extreme overdose).",
+            "Do not consume with alcohol. Do not exceed the recommended dosage to avoid liver damage.",
+            "Store below 30°C in a dry place. Keep away from direct sunlight and children.",
+            "Expiry: Dec 2028", 29.50, 10, "In Stock", 120, 4.6, 
+            "https://images.unsplash.com/photo-1584308666744-24d5c474f2ae?w=600&auto=format&fit=crop&q=80", false, "Medicines"));
+
+        // 2. Medicines - Cold/Allergy
+        list.add(new MedicalShopProduct(projectId, "Cetirizine 10mg", "Alerid", "Cetirizine Hydrochloride",
+            "An antihistamine that reduces the natural chemical histamine in the body. Antihistamines can produce symptoms of sneezing, itching, watery eyes, and runny nose.",
+            "Allergic rhinitis, hay fever, hives, skin itching, sneezing.",
+            "1 tablet daily at bedtime. May cause mild drowsiness.",
+            "Cetirizine HCl 10mg, Lactose, Maize starch.",
+            "Drowsiness, dry mouth, tiredness, headache.",
+            "Avoid driving or operating heavy machinery after consumption.",
+            "Store in a cool, dry place. Keep out of reach of children.",
+            "Expiry: Mar 2027", 18.00, 5, "In Stock", 250, 4.5,
+            "https://images.unsplash.com/photo-1550572017-edd951b55104?w=600&auto=format&fit=crop&q=80", false, "Medicines"));
+
+        // 3. Medicines - Heart/BP (Prescription Required)
+        list.add(new MedicalShopProduct(projectId, "Amlodipine 5mg", "Amlopin", "Amlodipine Besylate",
+            "Calcium channel blocker that dilates blood vessels to improve blood flow, widely prescribed for hypertension and chest pain (angina).",
+            "High blood pressure, chronic stable angina, coronary artery disease.",
+            "1 tablet daily in the morning, or as directed by a cardiologist.",
+            "Amlodipine Besylate 5mg, Microcrystalline cellulose.",
+            "Swelling of ankles or feet, dizziness, headache, fatigue.",
+            "Regular blood pressure monitoring is required. Do not stop taking abruptly.",
+            "Store in a cool dry place below 25°C. Protect from moisture.",
+            "Expiry: Sep 2027", 45.00, 15, "In Stock", 90, 4.8,
+            "https://images.unsplash.com/photo-1471864190281-a93a3070b6de?w=600&auto=format&fit=crop&q=80", true, "Medicines"));
+
+        // 4. Healthcare Devices - BP Monitor
+        list.add(new MedicalShopProduct(projectId, "Digital BP Monitor", "Omron", "N/A - Medical Device",
+            "Fully automatic blood pressure monitor operating on the oscillometric principle for precise measurements. Easy one-touch operation with hypertension indicator.",
+            "Monitoring systolic/diastolic blood pressure and pulse rate at home.",
+            "Wrap cuff around upper left arm, keep arm level with heart, press Start.",
+            "High precision pressure sensor, digital LCD monitor, medium cuff (22-32 cm).",
+            "None.",
+            "Avoid eating, smoking, or exercising 30 minutes before taking readings.",
+            "Store in its protective pouch. Avoid dropping or exposing to extreme heat.",
+            "Warranty: 3 Years", 1999.00, 20, "In Stock", 15, 4.9,
+            "https://images.unsplash.com/photo-1607613009820-a29f7bb81c04?w=600&auto=format&fit=crop&q=80", false, "Medical Devices"));
+
+        // 5. Healthcare Devices - Nebulizer
+        list.add(new MedicalShopProduct(projectId, "Compressor Nebulizer", "Philips Respironics", "N/A - Medical Device",
+            "Delivers aerosol medication therapy effectively for asthma, COPD, allergies, and other respiratory disorders.",
+            "Inhalation therapy for lung and airway congestion.",
+            "Connect medicine cup, fill with liquid medication, turn on air compressor, inhale mist.",
+            "Compressor pump, nebulizer cup, adult mask, child mask, tubing.",
+            "None.",
+            "Clean the medicine cup and mask thoroughly after each use to prevent bacterial growth.",
+            "Store in a dust-free bag. Keep away from water sources.",
+            "Warranty: 1 Year", 2499.00, 25, "In Stock", 8, 4.7,
+            "https://images.unsplash.com/photo-1584017911766-d451b3d0e843?w=600&auto=format&fit=crop&q=80", false, "Medical Devices"));
+
+        // 6. Vitamins & Supplements
+        list.add(new MedicalShopProduct(projectId, "Multivitamin Gold (60 Capsules)", "Revital", "Ginseng with Multivitamins & Minerals",
+            "Daily nutritional supplement loaded with Ginseng extract, 10 vitamins, and 9 minerals to fight fatigue and boost immunity.",
+            "Daily fatigue, low energy levels, vitamin deficiencies, physical stress.",
+            "1 capsule daily with water after meals (breakfast or lunch).",
+            "Ginseng Extract, Vitamin A, B-Complex, C, D3, E, Calcium, Iron, Zinc.",
+            "Mild stomach upset if taken on an empty stomach.",
+            "Not recommended for pregnant women or children without consulting a pediatrician.",
+            "Store in a cool, dark place. Protect from heat and direct sunlight.",
+            "Expiry: Oct 2027", 350.00, 12, "In Stock", 180, 4.4,
+            "https://images.unsplash.com/photo-1577401230592-240406f0e9d6?w=600&auto=format&fit=crop&q=80", false, "Vitamins"));
+
+        // 7. Personal Care
+        list.add(new MedicalShopProduct(projectId, "Moisturizing Ceramide Cream", "CeraVe", "Ceramides & Hyaluronic Acid",
+            "Provides 24-hour hydration and helps restore the protective skin barrier with three essential ceramides.",
+            "Dry skin, eczema flare-ups, skin barrier repair.",
+            "Apply liberally to clean face and body as often as needed.",
+            "Ceramide NP, Ceramide AP, Ceramide EOP, Hyaluronic Acid, Glycerin.",
+            "Extremely rare mild skin tingling.",
+            "For external use only. Avoid contact with eyes.",
+            "Store at room temperature. Keep container closed tightly.",
+            "Expiry: Jan 2028", 599.00, 8, "In Stock", 65, 4.7,
+            "https://images.unsplash.com/photo-1608248597279-f99d160bfcbc?w=600&auto=format&fit=crop&q=80", false, "Personal Care"));
+
+        // 8. Baby Care
+        list.add(new MedicalShopProduct(projectId, "Premium Diaper Pants (M-54)", "Pampers", "N/A - Baby Care",
+            "Baby diaper pants with 360-degree stretch fit and anti-leak guards, offering up to 12 hours of dry comfort.",
+            "Absorbing infant urine and preventing skin wetness.",
+            "Pull diaper up like pants. Tear sides to remove easily.",
+            "Absorbent gelling material, soft non-woven cover, elastic bands.",
+            "None.",
+            "Change diaper immediately when soiled to avoid diaper rash.",
+            "Store in a clean, dry, hygienic place.",
+            "Expiry: N/A", 749.00, 15, "In Stock", 40, 4.8,
+            "https://images.unsplash.com/photo-1519689680058-324335c77eb2?w=600&auto=format&fit=crop&q=80", false, "Baby Care"));
+
+        // 9. Medicines - Cough Syrup
+        list.add(new MedicalShopProduct(projectId, "Dry Cough Relief Syrup 100ml", "Benadryl", "Dextromethorphan Hydrobromide",
+            "Effective antitussive formulation designed to soothe throat tickle and suppress annoying dry coughs within 15 minutes.",
+            "Dry, tickly coughs, throat irritation due to colds or allergies.",
+            "10ml twice daily for adults. 5ml twice daily for children (6-12 years).",
+            "Dextromethorphan HBr 15mg per 5ml, Menthol.",
+            "Mild drowsiness, dizziness, constipation.",
+            "Do not consume if you are taking MAO inhibitors. May cause drowsiness.",
+            "Store below 25°C. Do not freeze.",
+            "Expiry: Aug 2027", 115.00, 10, "In Stock", 150, 4.5,
+            "https://images.unsplash.com/photo-1550572017-edd951b55104?w=600&auto=format&fit=crop&q=80", false, "Medicines"));
+
+        // 10. Medicines - Diabetes Care (Prescription Required)
+        list.add(new MedicalShopProduct(projectId, "Metformin 500mg SR", "Glycomet", "Metformin Hydrochloride",
+            "Sustained-release oral anti-diabetic drug that helps control blood sugar levels in patients with type 2 diabetes.",
+            "Type 2 Diabetes mellitus management.",
+            "Take 1 tablet daily with dinner, or as recommended by your physician.",
+            "Metformin HCl 500mg in sustained release matrix.",
+            "Stomach upset, flatulence, metallic taste, nausea.",
+            "Monitor kidney function regularly. Risk of lactic acidosis in rare cases.",
+            "Store in a dry place below 30°C. Protect from light.",
+            "Expiry: Jun 2028", 32.00, 5, "In Stock", 140, 4.7,
+            "https://images.unsplash.com/photo-1584017911766-d451b3d0e843?w=600&auto=format&fit=crop&q=80", true, "Medicines"));
+
+        // Seed to repository
+        for (MedicalShopProduct prod : list) {
+            repository.save(prod);
+        }
+        
+        // Return seeded list
+        return repository.findByProjectId(projectId);
+    }
+}
+
+
+package com.primezat.demo.controller;
+
+import com.primezat.demo.model.MedicalShopInfo;
+import com.primezat.demo.repository.MedicalShopInfoRepository;
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.http.ResponseEntity;
+import org.springframework.web.bind.annotation.*;
+
+import java.util.Optional;
+
+@RestController
+@RequestMapping("/api/medical-shop/info")
+@CrossOrigin(origins = "*")
+public class MedicalShopInfoApiController {
+
+    @Autowired
+    private MedicalShopInfoRepository repository;
+
+    @GetMapping
+    public ResponseEntity<MedicalShopInfo> getInfo(@RequestParam Long projectId) {
+        Optional<MedicalShopInfo> infoOpt = repository.findByProjectId(projectId);
+        if (infoOpt.isPresent()) {
+            return ResponseEntity.ok(infoOpt.get());
+        }
+        
+        // Return default/empty if not present
+        MedicalShopInfo defaultInfo = new MedicalShopInfo();
+        defaultInfo.setProjectId(projectId);
+        defaultInfo.setSubcategory("Pharmacy & Wellness");
+        defaultInfo.setCompanyName("MedShop Rx");
+        defaultInfo.setThemeColor("#10b981"); // Emerald color default
+        return ResponseEntity.ok(defaultInfo);
+    }
+
+    @PostMapping
+    public ResponseEntity<MedicalShopInfo> createInfo(@RequestParam Long projectId, @RequestBody MedicalShopInfo info) {
+        info.setProjectId(projectId);
+        Optional<MedicalShopInfo> opt = repository.findByProjectId(projectId);
+        if (opt.isPresent()) {
+            MedicalShopInfo existing = opt.get();
+            updateFields(existing, info);
+            return ResponseEntity.ok(repository.save(existing));
+        }
+        return ResponseEntity.ok(repository.save(info));
+    }
+
+    @PutMapping
+    public ResponseEntity<MedicalShopInfo> updateInfo(@RequestParam Long projectId, @RequestBody MedicalShopInfo info) {
+        info.setProjectId(projectId);
+        Optional<MedicalShopInfo> opt = repository.findByProjectId(projectId);
+        MedicalShopInfo toSave;
+        if (opt.isPresent()) {
+            toSave = opt.get();
+            updateFields(toSave, info);
+        } else {
+            toSave = info;
+        }
+        return ResponseEntity.ok(repository.save(toSave));
+    }
+
+    private void updateFields(MedicalShopInfo existing, MedicalShopInfo source) {
+        existing.setSubcategory(source.getSubcategory());
+        existing.setCompanyName(source.getCompanyName());
+        existing.setBusinessName(source.getBusinessName());
+        existing.setCompanyDescription(source.getCompanyDescription());
+        existing.setOwnerName(source.getOwnerName());
+        existing.setMobileNo(source.getMobileNo());
+        existing.setEmail(source.getEmail());
+        existing.setCity(source.getCity());
+        existing.setState(source.getState());
+        existing.setCountry(source.getCountry());
+        existing.setPincode(source.getPincode());
+        existing.setLogoUrl(source.getLogoUrl());
+        existing.setThemeColor(source.getThemeColor());
+        existing.setSelectedTheme(source.getSelectedTheme());
+        existing.setSelectedHomepageLayout(source.getSelectedHomepageLayout());
+        existing.setSelectedLoginLayout(source.getSelectedLoginLayout());
+        existing.setSelectedDashboardLayout(source.getSelectedDashboardLayout());
+    }
+}
+
+
+i want to test all endpoint i work properly or not give me a all URL for test the endpoint frompostman and also mention the methods post put delete get etc with body request 
