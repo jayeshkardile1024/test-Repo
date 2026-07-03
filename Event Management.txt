@@ -1,0 +1,74 @@
+Event Management
+++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++	
+ 
+
+admin
+----------------------
+
+
+
+*Booking Management Console
+	-When the admin adds a booking:
+		-The Customer Name column is not displayed.
+	-The Track Timeline button is not working.
+	
+*Event Management Console
+	-The Coordinator Assigned field cannot be changed.
+	-Execution Phase is set as the default as  Planning Operations and cannot be modified.	
+
+
+*Service Management Console
+	-When clicking Create Service, only a popup is displayed, and no functionality is available.
+
+*Package Management Console
+	-No functionality is present.
+
+*Vendor Management
+	-The page displays "This page couldn't load" (Page Not Found).
+
+
+*Calendar
+	-Only the calendar is displayed.
+	-No functionality is available
+
+
+*Gallery Management Console
+	-No functionality is working.
+
+*Blog Management Console
+	-No functionality is present.
+
+*Testimonials Console
+	-No functionality is present.
+
+
+
+
+
+
+User
+-------------------------
+
+
+*Book New Event Consultation
+	-Choose Event Type and Select Theme Package
+		-No values are available in the dropdown menus.
+	
+-Payments
+	-Only default values are displayed.
+
+*Timeline
+	-Only default values are displayed.
+
+*Checklist
+	-No functionality is present.
+
+*Gallery
+	-No operations can be performed.
+
+		
+
+
+
+
+
